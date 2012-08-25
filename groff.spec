@@ -1,7 +1,7 @@
 Summary:	A document formatting system
 Name:		groff
 Version:	1.21
-Release:	5
+Release:	6
 Epoch:		1
 License:	GPL
 Group:		Applications/Publishing
@@ -12,7 +12,7 @@ Source2:	groff-nroff
 URL:		http://www.gnu.org/software/groff/
 BuildRequires:	libstdc++-devel
 BuildRequires:	texinfo
-Requires:	mktemp
+Requires:	coreutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
