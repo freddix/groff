@@ -1,12 +1,12 @@
 Summary:	A document formatting system
 Name:		groff
-Version:	1.21
-Release:	6
+Version:	1.22.1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/groff/%{name}-%{version}.tar.gz
-# Source0-md5:	8b8cd29385b97616a0f0d96d0951c5bf
+# Source0-md5:	875c9c628b8b78a0c325000a43ebb964
 Source1:	%{name}-trofftops.sh
 Source2:	groff-nroff
 URL:		http://www.gnu.org/software/groff/
@@ -82,13 +82,15 @@ echo ".so soelim.1" >  $RPM_BUILD_ROOT%{_mandir}/man1/gsoelim.1
 echo ".so tbl.1" >     $RPM_BUILD_ROOT%{_mandir}/man1/gtbl.1
 echo ".so troff.1" >   $RPM_BUILD_ROOT%{_mandir}/man1/gtroff.1
 
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/groff-*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/postshell
+%post   -p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun -p /sbin/postshell
+%postun -p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
@@ -142,6 +144,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/roff2ps
 %attr(755,root,root) %{_bindir}/roff2text
 %attr(755,root,root) %{_bindir}/roff2x
+%attr(755,root,root) %{_bindir}/gropdf
+%attr(755,root,root) %{_bindir}/pdfmom
 
 %dir %{_libdir}/groff
 %dir %{_libdir}/groff/groffer
@@ -169,6 +173,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/grohtml.1*
 %{_mandir}/man1/grolbp.1*
 %{_mandir}/man1/grolj4.1*
+%{_mandir}/man1/gropdf.1*
 %{_mandir}/man1/grops.1*
 %{_mandir}/man1/grotty.1*
 %{_mandir}/man1/gsoelim.1*
@@ -180,6 +185,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/lookbib.1*
 %{_mandir}/man1/neqn.1*
 %{_mandir}/man1/nroff.1*
+%{_mandir}/man1/pdfmom.1*
 %{_mandir}/man1/pdfroff.1*
 %{_mandir}/man1/pfbtops.1*
 %{_mandir}/man1/pic.1*
