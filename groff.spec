@@ -1,12 +1,12 @@
 Summary:	A document formatting system
 Name:		groff
-Version:	1.22.1
-Release:	2
+Version:	1.22.2
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/groff/%{name}-%{version}.tar.gz
-# Source0-md5:	875c9c628b8b78a0c325000a43ebb964
+# Source0-md5:	9f4cd592a5efc7e36481d8d8d8af6d16
 Source1:	%{name}-trofftops.sh
 Source2:	groff-nroff
 URL:		http://www.gnu.org/software/groff/
