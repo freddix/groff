@@ -1,7 +1,8 @@
+# based on PLD Linux spec git://git.pld-linux.org/packages/groff.git
 Summary:	A document formatting system
 Name:		groff
 Version:	1.22.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Publishing
