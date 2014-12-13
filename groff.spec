@@ -1,13 +1,13 @@
 # based on PLD Linux spec git://git.pld-linux.org/packages/groff.git
 Summary:	A document formatting system
 Name:		groff
-Version:	1.22.2
-Release:	2
+Version:	1.22.3
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/groff/%{name}-%{version}.tar.gz
-# Source0-md5:	9f4cd592a5efc7e36481d8d8d8af6d16
+# Source0-md5:	cc825fa64bc7306a885f2fb2268d3ec5
 Source1:	%{name}-trofftops.sh
 Source2:	groff-nroff
 URL:		http://www.gnu.org/software/groff/
@@ -149,6 +149,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pdfmom
 
 %dir %{_libdir}/groff
+%{_libdir}/groff/groff_opts_no_arg.txt
+%{_libdir}/groff/groff_opts_with_arg.txt
 %dir %{_libdir}/groff/groffer
 %attr(755,root,root) %{_libdir}/groff/groffer/split_env.sh
 %attr(755,root,root) %{_libdir}/groff/groffer/version.sh
@@ -211,13 +213,31 @@ rm -rf $RPM_BUILD_ROOT
 %files perl
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/afmtodit
+%attr(755,root,root) %{_bindir}/gperl
 %attr(755,root,root) %{_bindir}/grog
 %attr(755,root,root) %{_bindir}/mmroff
 %attr(755,root,root) %{_bindir}/trofftops
-%attr(755,root,root) %{_libdir}/groff/groffer/func.pl
-%attr(755,root,root) %{_libdir}/groff/groffer/man.pl
-%attr(755,root,root) %{_libdir}/groff/groffer/perl_test.pl
 %{_mandir}/man1/afmtodit.*
+%{_mandir}/man1/gperl.1*
 %{_mandir}/man1/grog.*
 %{_mandir}/man1/mmroff.*
+
+%attr(755,root,root) %{_bindir}/gpinyin
+%dir %{_libdir}/groff/gpinyin
+%attr(755,root,root) %{_libdir}/groff/gpinyin/subs.pl
+%{_mandir}/man1/gpinyin.1*
+
+%attr(755,root,root) %{_bindir}/glilypond
+%dir %{_libdir}/groff/glilypond
+%attr(755,root,root) %{_libdir}/groff/glilypond/args.pl
+%attr(755,root,root) %{_libdir}/groff/glilypond/oop_fh.pl
+%attr(755,root,root) %{_libdir}/groff/glilypond/subs.pl
+%{_mandir}/man1/glilypond.1*
+
+%attr(755,root,root) %{_libdir}/groff/groffer/man.pl
+%attr(755,root,root) %{_libdir}/groff/groffer/main_subs.pl
+%attr(755,root,root) %{_libdir}/groff/groffer/subs.pl
+
+%dir %{_libdir}/groff/grog
+%attr(755,root,root) %{_libdir}/groff/grog/subs.pl
 
